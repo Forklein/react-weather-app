@@ -49,9 +49,10 @@ const Weather = () => {
 
   return (
     <div className="weather">
-      <header className="d-flex justify-content-center align-items-center text-white">
+      <header className="d-flex justify-content-center align-items-baseline text-white">
         <h1>Weather App</h1>
-        <i className="fa-solid fa-sun ms-2 fa-2x"></i>
+        &nbsp;
+        <i class="fa-solid fa-cloud-sun fa-2x"></i>
       </header>
       <main>
         <button className="btn btn-primary mb-3" onClick={getData}>
@@ -59,10 +60,14 @@ const Weather = () => {
         </button>
         <Card location={location} ip={ip} />
       </main>
-      <footer className="mt-3 d-flex justify-content-between align-items-center text-white">
-        <i className="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
-        <pre>Powered By Forklein</pre>
-        <i className="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
+      <footer className="mt-3 d-flex justify-content-center text-white ">
+        <div className="icon">
+          <i className="fa-solid fa-spinner fa-spin-pulse"></i>
+        </div>
+        <pre className="mx-2">Powered By Forklein</pre>
+        <div className="icon">
+          <i className="fa-solid fa-spinner fa-spin-pulse"></i>
+        </div>
       </footer>
     </div>
   );
