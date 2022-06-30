@@ -32,7 +32,10 @@ const Weather = () => {
 
   return (
     <div className="weather">
-      <h1>Weather</h1>
+      <header className="d-flex justify-content-center align-items-center mt-3 text-white">
+        <h1>Weather</h1>
+        <i className="fa-solid fa-sun ms-2 fa-2x"></i>
+      </header>
       <button className="btn btn-primary mb-3" onClick={getData}>
         Click for info weather
       </button>
