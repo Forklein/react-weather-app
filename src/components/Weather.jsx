@@ -6,12 +6,14 @@ const Weather = () => {
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
   const [location, setLocation] = useState(null);
+  const [ip, setIp] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
+    getIp("http://ip-api.com/json");
     // console.log("Latitude is:", lat);
     // console.log("Longitude is:", long);
     // console.log(location);
@@ -31,6 +33,20 @@ const Weather = () => {
     }
   };
 
+  const getIp = async (baseUrl) => {
+    try {
+      const res = await axios.get(baseUrl);
+      const { query } = res.data;
+      if (!query) {
+        throw new Error("API error!!!");
+      }
+      setIp(query);
+      console.log(query);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="weather">
       <header className="d-flex justify-content-center align-items-center text-white">
@@ -41,12 +57,12 @@ const Weather = () => {
         <button className="btn btn-primary mb-3" onClick={getData}>
           Click Now !
         </button>
-        <Card location={location} />
+        <Card location={location} ip={ip} />
       </main>
       <footer className="mt-3 d-flex justify-content-between align-items-center text-white">
-        <i class="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
         <pre>Powered By Forklein</pre>
-        <i class="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
+        <i className="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
       </footer>
     </div>
   );

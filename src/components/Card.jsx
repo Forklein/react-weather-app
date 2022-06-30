@@ -1,7 +1,9 @@
 import React from "react";
+import axios from "axios";
 
 const Card = (props) => {
-  const { location } = props;
+  const { location, ip } = props;
+
   if (location === null) return null;
   if (location.message) return <pre>{location.message}</pre>;
 
@@ -26,6 +28,7 @@ const Card = (props) => {
           <p>
             Temperatura Massima: <strong>{location.main.temp_max}°C</strong>
           </p>
+          <p>Ip Address: {ip}</p>
         </div>
       </div>
       <div className="card-footer">
