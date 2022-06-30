@@ -31,6 +31,7 @@ const Weather = () => {
   return (
     <div className="weather">
       <h1>Weather</h1>
+      <button></button>
     </div>
   );
 };
