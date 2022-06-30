@@ -33,14 +33,21 @@ const Weather = () => {
 
   return (
     <div className="weather">
-      <header className="d-flex justify-content-center align-items-center mt-3 text-white">
-        <h1>Weather</h1>
+      <header className="d-flex justify-content-center align-items-center text-white">
+        <h1>Weather App</h1>
         <i className="fa-solid fa-sun ms-2 fa-2x"></i>
       </header>
-      <button className="btn btn-primary mb-3" onClick={getData}>
-        Click for info weather
-      </button>
-      <Card location={location} />
+      <main>
+        <button className="btn btn-primary mb-3" onClick={getData}>
+          Click Now !
+        </button>
+        <Card location={location} />
+      </main>
+      <footer className="mt-3 d-flex justify-content-between align-items-center text-white">
+        <i class="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
+        <pre>Powered By Forklein</pre>
+        <i class="fa-solid fa-spinner fa-spin-pulse fa-2x"></i>
+      </footer>
     </div>
   );
 };

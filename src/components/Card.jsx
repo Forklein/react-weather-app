@@ -6,7 +6,10 @@ const Card = (props) => {
   if (location.message) return <pre>{location.message}</pre>;
 
   return (
-    <div className="card mx-auto" style={{ width: "18rem" }}>
+    <div
+      className="card bg-dark text-white p-3 mx-auto"
+      style={{ width: "18rem" }}
+    >
       {/* <img className="card-img-top" src="..." alt="Card image cap" /> */}
       <div className="card-header">
         <h3>{location.name}</h3>
