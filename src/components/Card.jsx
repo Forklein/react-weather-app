@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 const Card = (props) => {
   const { location, ip } = props;
@@ -12,7 +11,6 @@ const Card = (props) => {
       className="card bg-dark text-white p-3 mx-auto"
       style={{ width: "18rem" }}
     >
-      {/* <img className="card-img-top" src="..." alt="Card image cap" /> */}
       <div className="card-header">
         <h3>{location.name}</h3>
       </div>
