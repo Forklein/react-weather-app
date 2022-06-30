@@ -8,7 +8,7 @@ const Card = (props) => {
 
   return (
     <div
-      className="card bg-dark text-white p-3 mx-auto"
+      className="card bg-dark text-white p-3 mx-auto shadow rounded"
       style={{ width: "18rem" }}
     >
       <div className="card-header">
