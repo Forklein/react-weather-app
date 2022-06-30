@@ -1,4 +1,3 @@
-import Loader from './components/Loader';
 import Weather from './components/Weather';
 
 function App() {
