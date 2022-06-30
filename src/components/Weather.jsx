@@ -26,6 +26,7 @@ const Weather = () => {
       // console.log(data);
       // console.log(location);
     } catch (error) {
+      setLocation(error);
       console.log(error);
     }
   };

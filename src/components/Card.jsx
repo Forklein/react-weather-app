@@ -3,12 +3,13 @@ import React from "react";
 const Card = (props) => {
   const { location } = props;
   if (location === null) return null;
+  if (location.message) return <pre>{location.message}</pre>;
 
   return (
     <div className="card mx-auto" style={{ width: "18rem" }}>
       {/* <img className="card-img-top" src="..." alt="Card image cap" /> */}
       <div className="card-header">
-        <h2>{location.name}</h2>
+        <h3>{location.name}</h3>
       </div>
       <div className="card-body">
         {/* <h5 className="card-title my-2">{location.name}</h5> */}
