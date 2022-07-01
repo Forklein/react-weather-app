@@ -31,6 +31,10 @@ const Card = (props) => {
       </div>
       <div className="card-footer">
         <p>{location.weather[0].description.toUpperCase()}</p>
+        <img
+          src={`http://openweathermap.org/img/wn/${location.weather[0].icon}.png`}
+          alt=""
+        />
       </div>
     </div>
   );

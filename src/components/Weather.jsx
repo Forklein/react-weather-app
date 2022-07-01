@@ -13,11 +13,15 @@ const Weather = () => {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-    getIp("http://ip-api.com/json");
+    getIp(`${process.env.REACT_APP_IP_URL}`);
     // console.log("Latitude is:", lat);
     // console.log("Longitude is:", long);
     // console.log(location);
   }, [lat, long]);
+
+  useEffect(() => {
+    getIp(`${process.env.REACT_APP_IP_URL}`);
+  });
 
   const getData = async () => {
     try {
@@ -36,12 +40,12 @@ const Weather = () => {
   const getIp = async (baseUrl) => {
     try {
       const res = await axios.get(baseUrl);
-      const { query } = res.data;
-      if (!query) {
+      const { ip } = res.data;
+      if (!ip) {
         throw new Error("API error!!!");
       }
-      setIp(query);
-      console.log(query);
+      setIp(ip);
+      // console.log(ip);
     } catch (error) {
       console.log(error);
     }
@@ -52,7 +56,7 @@ const Weather = () => {
       <header className="d-flex justify-content-center align-items-baseline text-white">
         <h1>Weather App</h1>
         &nbsp;
-        <i class="fa-solid fa-cloud-sun fa-2x"></i>
+        <i className="fa-solid fa-cloud-sun fa-2x"></i>
       </header>
       <main>
         <button className="btn btn-primary mb-3" onClick={getData}>
