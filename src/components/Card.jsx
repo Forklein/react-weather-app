@@ -1,4 +1,5 @@
 import React from "react";
+import Flag from "react-world-flags";
 
 const Card = (props) => {
   const { location, ip } = props;
@@ -13,6 +14,7 @@ const Card = (props) => {
     >
       <div className="card-header">
         <h3>{location.name}</h3>
+        <Flag code={location.sys.country} height="16" />
       </div>
       <div className="card-body">
         {/* <h5 className="card-title my-2">{location.name}</h5> */}
